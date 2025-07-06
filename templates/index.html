@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personality Predictor</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f2f2f2; }
+        form { background: white; padding: 20px; border-radius: 8px; max-width: 400px; margin: auto; }
+        input { margin-bottom: 10px; width: 100%; padding: 8px; }
+        button { padding: 10px; width: 100%; background: #4CAF50; color: white; border: none; }
+        h2 { text-align: center; }
+    </style>
+</head>
+<body>
+
+<h2>Predict Your Personality</h2>
+
+<form method="POST" action="/predict">
+    <label>Time Spent Alone</label>
+    <input type="number" name="Time_spent_Alone" step="any" required>
+
+    <label>Stage Fear (0 or 1)</label>
+    <input type="number" name="Stage_fear" step="any" required>
+
+    <label>Social Event Attendance</label>
+    <input type="number" name="Social_event_attendance" step="any" required>
+
+    <label>Going Outside (frequency)</label>
+    <input type="number" name="Going_outside" step="any" required>
+
+    <label>Drained After Socializing (0 or 1)</label>
+    <input type="number" name="Drained_after_socializing" step="any" required>
+
+    <label>Friends Circle Size</label>
+    <input type="number" name="Friends_circle_size" step="any" required>
+
+    <label>Post Frequency</label>
+    <input type="number" name="Post_frequency" step="any" required>
+
+    <button type="submit">Predict</button>
+
+    {% if prediction %}
+    <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+</form>
+
+</body>
+</html>
